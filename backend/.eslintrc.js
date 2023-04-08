@@ -19,7 +19,10 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
-  ignorePatterns: ['.eslintrc.cjs', './node_modules', '**/*.json', '**/*.md', ''],
+  parserOptions: {
+    project: './tsconfig.eslint.json',
+  },
+  ignorePatterns: ['.eslintrc.js', './node_modules', '**/*.json', '**/*.md', ''],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -86,5 +89,5 @@ module.exports = {
         'func-names': 'off',
       },
     },
-  ],
+  ]
 };
