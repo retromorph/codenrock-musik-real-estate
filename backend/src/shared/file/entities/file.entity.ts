@@ -9,6 +9,6 @@ export class FileEntity {
   @PrimaryGeneratedColumn()
     id: number;
 
-  @Column('longtext', { nullable: false })
+  @Column('text', { nullable: false })
     url: string;
 }

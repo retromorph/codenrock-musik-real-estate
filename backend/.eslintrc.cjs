@@ -22,7 +22,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
-  ignorePatterns: ['.eslintrc.js', './node_modules', '**/*.json', '**/*.md', ''],
+  ignorePatterns: ['.eslintrc.cjs', './node_modules', '**/*.json', '**/*.md', ''],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

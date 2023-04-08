@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config';
-import * as ev from 'env-var';
+import ev from 'env-var';
 
 export const fileConfig = registerAs(
   'file',

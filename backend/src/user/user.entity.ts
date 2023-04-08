@@ -1,33 +1,28 @@
 import {
-    Column,
-    Entity, PrimaryGeneratedColumn,
+    Column, CreateDateColumn,
+    Entity, JoinColumn, OneToOne,
+    PrimaryGeneratedColumn, UpdateDateColumn,
 } from 'typeorm';
-import {UserRole, UserType} from "./types";
+import {UserRole, UserStatus, UserType} from "./types";
+import {ProfileEntity} from "./profile/profile.entity";
+import {SettingsEntity} from "./settings/settings.entity";
 
 @Entity()
 export class UserEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    name: string;
-
-    @Column({
-        nullable: true,
-    })
-    patronymic: string | undefined;
-
-    @Column()
-    surname: string;
-
-    @Column()
+    @Column({unique: true})
     email: string;
 
-    @Column()
-    phone: string;
+    @Column({length: 100})
+    name: string;
 
-    @Column()
-    avatarId: number;
+    @Column({nullable: true, length: 100})
+    patronymic?: string;
+
+    @Column({length: 100})
+    surname: string;
 
     @Column({enum: UserRole})
     role: UserRole;
@@ -37,4 +32,21 @@ export class UserEntity {
 
     @Column()
     password: string;
+
+    @Column({enum: UserStatus})
+    status: UserStatus
+
+    @OneToOne(() => ProfileEntity)
+    @JoinColumn()
+    profile: ProfileEntity;
+
+    @OneToOne(() => SettingsEntity)
+    @JoinColumn()
+    settings: SettingsEntity;
+
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
+    public createdAt: Date;
+
+    @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)", onUpdate: "CURRENT_TIMESTAMP(6)" })
+    public updatedAt: Date;
 }
