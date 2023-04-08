@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import { TopNavbar } from "../components/top-navbar";
-import { ObjectField } from "../create-work-group/object-field";
-import { ObjectImage } from "../create-work-group/object-image";
-import { DocumentField } from "../create-work-group/document-field";
+import { ObjectField } from "../object-page/object-field";
+import { ObjectImage } from "../object-page/object-image";
+import { DocumentField } from "../object-page/document-field";
 import {ChangeEvent} from "react";
 
 

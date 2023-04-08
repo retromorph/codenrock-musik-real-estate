@@ -7,13 +7,13 @@ import {useNavigate} from "react-router-dom";
 export function UserProfilePage(){
 
     const user = useSelector((state: any) => state.user)
-    const work_groups = useSelector((state: any) => state.work_groups.workGroups)
+    const work_groups = useSelector((state: any) => state.work_groups.workGroups.map((state: any) => state.info))
 
     const navigate = useNavigate()
 
     const InformationDiv = ({value, label}: { value: any, label: string } ) => {
         return(
-            <div className={'mt-2 w-[60%]'}>
+            <div className={'mt-2 w-[100%]'}>
                 <label className={'text-[18px]'}>{label}</label>
                 <div className={'border-2 mt-1 h-[40px] flex flex-row items-center box-border p-[5px] rounded-md'}>
                     <p className={'text-[18px] outline-none w-full'}>{value}</p>
@@ -29,12 +29,12 @@ export function UserProfilePage(){
     return(
         <>
             <TopNavbar/>
-            <div className={'w-full box-border pt-[150px] pb-[150px] pl-[10%] pr-[10%] flex flex-row'}>
+            <div className={'w-full box-border pt-[150px] pb-[150px] pl-[20%] pr-[20%] flex flex-row'}>
                 <img alt={'avatar'} className={'max-w-[400px] max-h-[532px] object-cover'} src={'https://amiel.club/uploads/posts/2022-03/1647762844_3-amiel-club-p-kartinki-litsa-cheloveka-3.png'}/>
                 <div className={'flex flex-col w-full ml-[100px]'}>
                     <div>
                         <p className={'text-[24px] text-center font-bold'}>Личная информация</p>
-                        <div className={'mt-[30px]'}>
+                        <div className={'mt-[30px] box-border p-[20px] border-[1px] w-[100%] ml-auto mr-auto shadow-xl'}>
                             <InformationDiv label={'Имя'} value={user.first_name}/>
                             <InformationDiv label={'Отчество'} value={user.second_name}/>
                             <InformationDiv label={'Фамилия'} value={user.last_name}/>
@@ -44,21 +44,23 @@ export function UserProfilePage(){
                         </div>
                     </div>
                     <div className={'mt-[50px] w-full'}>
-                        <p className={'text-[24px] text-center font-bold'}>Рабочие группы</p>
-                        <button className={'w-[100px] h-[40px] bg-blue-400 text-white rounded-md ml-auto mr-auto mt-4'} onClick={() => navigate('/createWorkGroup')}>
-                            Создать
-                        </button>
+                        <div className={'flex flex-row items-center h-[50px]'}>
+                            <p className={'text-[24px] text-center font-bold'}>Рабочие группы</p>
+                            <button className={'w-[100px] h-[40px] bg-blue-400 text-white rounded-md ml-auto'} onClick={() => navigate('/createWorkGroup')}>
+                                Создать
+                            </button>
+                        </div>
                         <div className={'mt-[30px]'}>
                             {work_groups.map((group: any) => (
-                                <div key={group.id} className={'w-[60%] border-2 h-[40px] [&:not(:first-child)]:border-t-0 last:rounded-b-md first:rounded-t-md flex flex-row items-center'}>
+                                <div key={group.id} className={'w-[100%] border-2 h-[40px] [&:not(:first-child)]:border-t-0 last:rounded-b-md first:rounded-t-md flex flex-row items-center'}>
                                     <p className={'ml-4'}>{group.name}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div className={'mt-[50px] w-full flex flex-row'}>
-                        <button className={'w-[100px] h-[40px] bg-blue-400 text-white rounded-md ml-auto mr-auto'} onClick={Exit}>
-                            Выйти
+                        <button className={'w-[200px] h-[40px] bg-blue-400 text-white rounded-md ml-auto mr-auto'} onClick={Exit}>
+                            Выйти из аккаунта
                         </button>
                     </div>
                 </div>

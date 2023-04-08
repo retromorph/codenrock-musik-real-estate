@@ -34,8 +34,11 @@ function App() {
       })
       dispatch({
           type: 'setWorkGroups',
-          workGroups: [{id: 1, name: 'Первая группа'}, {id: 2, name: 'Вторая группа'}, {id: 3, name: 'Третья группа'}]
-      })
+          workGroups: [
+              {info: {value: 1, name: 'Первая группа'}, plans: [{date: '2023-04-09', url: 'zoom213123231', time: '18:00'}, {date: '2023-04-15', url: 'zoom232', time: '18:00'}, {date: '2023-05-02', url: 'skype', time: '18:00'},]},
+              {info: {value: 2, name: 'Вторая группа'}, plans: [{date: '2023-04-10', url: 'zoom213123231', time: '15:00'}, {date: '2023-04-17', url: 'zoom232', time: '18:00'}, {date: '2023-05-09', url: 'skype', time: '18:00'},]},
+              {info: {value: 3, name: 'Третья группа'}, plans: [{date: '2023-04-11', url: 'zoom213123231', time: '12:00'}, {date: '2023-04-05', url: 'zoom232', time: '18:00'}, {date: '2023-05-22', url: 'skype', time: '18:00'},]},
+            ]})
   }, [])
 
   return (

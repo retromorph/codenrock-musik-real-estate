@@ -2,9 +2,9 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 
 import { TopNavbar } from "../components/top-navbar";
-import {ObjectField} from "../create-work-group/object-field";
-import {ObjectImage} from "../create-work-group/object-image";
-import {DocumentField} from "../create-work-group/document-field";
+import { ObjectField } from "./object-field";
+import { ObjectImage } from "./object-image";
+import { DocumentField } from "./document-field";
 
 
 export function ObjectPage(){
