@@ -11,6 +11,7 @@
     "noImplicitOverride": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
+    "strictPropertyInitialization": false,
 
     // modules
     "target": "ES2020",

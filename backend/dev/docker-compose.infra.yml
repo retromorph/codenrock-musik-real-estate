@@ -21,3 +21,11 @@ services:
       - POSTGRES_PASSWORD=1
     ports:
       - "5432:5432"
+
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=real_estate
+      - MONGO_INITDB_ROOT_PASSWORD=1
+    ports:
+      - '27017:27017'

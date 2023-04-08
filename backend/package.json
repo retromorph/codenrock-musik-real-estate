@@ -18,12 +18,27 @@
     "eslint": "eslint \"{src,test}/**/*.ts\"",
     "eslint:fix": "eslint \"{src,test}/**/*.ts\" --fix"
   },
+  "engines": {
+    "node": ">=18.15.0"
+  },
   "dependencies": {
     "@nestjs/common": "9.0.0",
+    "@nestjs/config": "^2.3.1",
     "@nestjs/core": "9.0.5",
+    "@nestjs/mongoose": "^9.2.2",
     "@nestjs/platform-express": "9.0.0",
+    "@nestjs/serve-static": "^3.0.1",
+    "@nestjs/typeorm": "^9.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "env-var": "^7.3.0",
+    "fp-ts": "^2.13.1",
+    "mongoose": "^7.0.3",
+    "nestjs-form-data": "^1.8.7",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.5.5"
+    "rxjs": "7.5.5",
+    "typeorm": "^0.3.13",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "9.0.0",
