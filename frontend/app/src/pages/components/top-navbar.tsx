@@ -10,7 +10,7 @@ export function TopNavbar(){
     const navigate = useNavigate()
 
     return(
-        <div className={'fixed w-full h-[50px] bg-blue-400 flex flex-row items-center box-border pl-[30px] pr-[30px]'}>
+        <div className={'fixed w-full h-[50px] z-[100] bg-blue-400 flex flex-row items-center box-border pl-[30px] pr-[30px]'}>
             <p className={'text-white font-bold text-[18px]'}>Объекты недвижимости</p>
             <div className={'ml-auto flex flex-row gap-[30px]'}>
                 <button className={'text-white border-2 w-[100px] h-[32px] rounded-md'} onClick={() => navigate('/catalog')}>

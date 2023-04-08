@@ -10,6 +10,8 @@ import { CalendarPage } from "./pages/calendar/calendar-page";
 import { CreateWorkGroupPage } from "./pages/create-work-group/create-work-group-page";
 
 import { useDispatch } from "react-redux";
+import {ObjectPage} from "./pages/object-page/object-page";
+import {CreateObjectPage} from "./pages/create-object/create-object-page";
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
             <Route path={'/auth'} element={<AuthPage/>}/>
             <Route path={'/profile'} element={<UserProfilePage/>}/>
             <Route path={'/catalog'} element={<CatalogPage/>}/>
+            <Route path={'/catalog/:id'} element={<ObjectPage />}/>
+            <Route path={'/create'} element={<CreateObjectPage />}/>
             <Route path={'/calendar'} element={<CalendarPage/>}/>
             <Route path={'/createWorkGroup'} element={<CreateWorkGroupPage/>}/>
         </Routes>
