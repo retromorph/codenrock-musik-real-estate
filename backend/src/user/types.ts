@@ -1,0 +1,11 @@
+export enum UserType {
+  ORGANIC,
+  MOSCOW_PROPERTY_DEPARTMENT,
+  FEDERAL_TAX_DEPARTMENT,
+  MOSCOW_CULTURAL_DEPARTMENT,
+}
+
+export enum UserRole {
+  ADMIN,
+  DEFAULT,
+}

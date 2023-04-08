@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { fileConfig } from './config/file.config';
 import { mongoConfig } from './config/mongo.config';
 import { postgresConfig } from './config/postgres.config';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { postgresConfig } from './config/postgres.config';
     TypeOrmModule.forRoot(postgresConfig()),
     // @ts-ignore
     MongooseModule.forRoot(mongoConfig().uri, mongoConfig()),
+    UserModule,
   ],
   controllers: [],
   providers: [],
