@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    // type checking
+    "strict": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strictPropertyInitialization": false,
+
+    // modules
+    "target": "ES2020",
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
+    "types": ["node", "jest", "supertest"],
+
+    // emit
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+
+    // interop constraints
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // language and environment
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // project
+    "incremental": true,
+
+    // output formatting
+    "pretty": true,
+
+    // completeness
+    "skipLibCheck": true
+  }
+}
